@@ -1,27 +1,22 @@
-# requirements.txt
+# requirements.txt - UNPINNED FOR MODERN RESOLVER
 
 # --- Core AI Agent Framework ---
-# UNPINNED to let pip find a compatible set of versions
 crewai
 crewai-tools
 
 # --- Frontend Web Application ---
-streamlit==1.32.2
+streamlit
 
 # --- Integration Layer for Tools ---
-# UNPINNED to match the crewai version
 composio-crewai
 
 # --- LLM and LanguageChain Support ---
-# Pinning the main libraries is fine, but unpin the langchain adapter
-openai==1.14.3
-langchain-openai  # UNPINNED
-langchain-google-genai # <-- ADD THIS LINE FOR GEMINI
-
-google-generativeai==0.4.1
+langchain-google-genai
+google-generativeai
+# openai is often a required dependency for underlying tools, so we keep it
+openai
 
 # --- Utilities ---
-# These are stable and can remain pinned
-python-dotenv==1.0.0
-requests==2.31.0
-Pillow==10.2.0
+python-dotenv
+requests
+Pillow

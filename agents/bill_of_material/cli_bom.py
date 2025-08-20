@@ -3,6 +3,7 @@ import asyncio
 from google import genai
 import httpx
 from bs4 import BeautifulSoup
+import json
 
 # Initialize Gemini client (Google AI Studio key)
 client = genai.Client(api_key="")
@@ -65,10 +66,56 @@ async def fetch_part_options(part_name: str, client: httpx.AsyncClient):
 
 PROMPT_INSTRUCTION = (
     "You are a hardware engineering assistant. "
-    "Given the user's project description, extract a Bill of Materials (BOM). "
+    "Given the user's project description, extract a Bill of Materials (BOM) consisting of electronic components and hardware parts. "
+    "Infer the necessary parts based on the project's objective, budget, microcontroller, skill level, and any additional information provided. "
     "If there is any ambiguity or missing information, ask an appropriate clarification question. "
-    "If everything is clear, respond with 'BOM:' followed by a JSON array of items with fields: part, quantity, description."
+    "If everything is clear, respond with 'BOM:' followed by a JSON array of items with fields: part, quantity, description.\n\n"
+    "Example:\n"
+    "Project Description: Objective: Build a smart home lighting system. Budget: $100. Microcontroller: ESP32. Skill Level: Intermediate. Additional Info: Needs to be controllable via a mobile app.\n"
+    "BOM: [\n"
+    "  {\"part\": \"ESP32 Development Board\", \"quantity\": 1, \"description\": \"Main microcontroller for the system\"},\n"
+    "  {\"part\": \"LED Strip (WS2812B)\", \"quantity\": 5, \"description\": \"Addressable RGB LED strip for lighting\"},\n"
+    "  {\"part\": \"5V Power Supply\", \"quantity\": 1, \"description\": \"Power supply for ESP32 and LED strip\"},\n"
+    "  {\"part\": \"Breadboard\", \"quantity\": 1, \"description\": \"For prototyping and connections\"},\n"
+    "  {\"part\": \"Jumper Wires\", \"quantity\": 1, \"description\": \"For connecting components\"}\n"
+    "]"
 )
+
+async def generate_bom_and_source_parts(project_description):
+    conversation = [
+        {"role": "user", "content": PROMPT_INSTRUCTION},
+        {"role": "user", "content": project_description}
+    ]
+    async with httpx.AsyncClient() as http_client:
+        response_text = await call_gemini(conversation)
+        print(f"[DEBUG] Gemini response_text: {response_text}")
+        if not response_text.startswith("BOM:"):
+            return None, "Clarification needed: " + response_text
+        bom_json = response_text[len("BOM:"):].strip()
+        try:
+            bom = json.loads(bom_json)
+            print(f"[DEBUG] Parsed BOM: {bom}")
+        except Exception as e:
+            print(f"[ERROR] Could not parse BOM JSON: {e}")
+            return None, "Could not parse BOM JSON."
+        sourced_parts = []
+        for item in bom:
+            part_name = item["part"]
+            options = await fetch_part_options(part_name, http_client)
+            print(f"[DEBUG] Options for {part_name}: {options}")
+            option_list = [
+                {"name": name, "price": price, "link": link}
+                for name, price, link in options
+            ]
+            sourced_parts.append({
+                "part": part_name,
+                "quantity": item["quantity"],
+                "options": option_list
+            })
+        # Save to file
+        with open("sourced_parts.json", "w", encoding="utf-8") as f:
+            json.dump(sourced_parts, f, indent=2, ensure_ascii=False)
+        return sourced_parts, None
 
 
 async def main():

@@ -1,0 +1,149 @@
+[
+  {
+    "part": "ESP32 Development Board",
+    "quantity": 1,
+    "options": [
+      {
+        "name": "Black ESP32 Breakout Board for 38PIN ESP32 Development Board",
+        "price": 177,
+        "link": "https://robu.in/product/black-esp32-breakout-board-for-38pin-esp32-development-board/"
+      },
+      {
+        "name": "ESP32 Development Board TYPE-C/Micro USB ESP32 Expansion Board 38PIN Female header",
+        "price": 177,
+        "link": "https://robu.in/product/esp32-development-board-type-c-micro-usb-esp32-expansion-board-38pin-female-header/"
+      },
+      {
+        "name": "Green ESP32 Breakout Board for 30PIN ESP32 Development Board",
+        "price": 209,
+        "link": "https://robu.in/product/green-esp32-breakout-board-for-38pin-esp32-development-board/"
+      }
+    ]
+  },
+  {
+    "part": "UV LED (395nm-400nm, 5mm)",
+    "quantity": 3,
+    "options": [
+      {
+        "name": "UV LED 390nM – 397nM 0.5W SMD – P-LCC-2 Package",
+        "price": 7.76,
+        "link": "https://sharvielectronics.com/product/uv-led-390nm-397nm-0-5w-smd-p-lcc-2-package/"
+      },
+      {
+        "name": "5mm UV LED",
+        "price": 7.96,
+        "link": "https://sharvielectronics.com/product/5mm-uv-led/"
+      },
+      {
+        "name": "5mm Ultraviolet UV LED",
+        "price": 12,
+        "link": "https://probots.co.in/ultraviolet-leds.html"
+      }
+    ]
+  },
+  {
+    "part": "220 Ohm Resistor (1/4W)",
+    "quantity": 3,
+    "options": [
+      {
+        "name": "220 Ohm 1/4W 0603 Surface Mount Chip Resistor",
+        "price": 0.49,
+        "link": "https://robu.in/product/220-ohm-chip-resistor-1-4w-0603-surface-mount-pack-of-100/"
+      },
+      {
+        "name": "220 Ohm 1/4W 1206 Surface Mount Chip Resistor",
+        "price": 0.65,
+        "link": "https://robu.in/product/220-ohm-chip-resistor-1-4w-1206-surface-mount-pack-of-100/"
+      },
+      {
+        "name": "9.9 ohm – 1/4W – Resistor – 0603",
+        "price": 0.75,
+        "link": "https://sharvielectronics.com/product/9-9-ohm-1-4w-resistor-0603-pack-of-20/"
+      }
+    ]
+  },
+  {
+    "part": "Small 5V DC Fan (e.g., 40x40x10mm)",
+    "quantity": 1,
+    "options": [
+      {
+        "name": "4010 – 12VDC 0.15A Cooling Fan – 40x40x10 mm",
+        "price": 78.36,
+        "link": "https://sharvielectronics.com/product/4010-12vdc-0-15a-cooling-fan-40x40x10-mm/"
+      },
+      {
+        "name": "9225 DC 5V Oil Containing Cooling Fan",
+        "price": 94,
+        "link": "https://robu.in/product/9225-dc-5v-oil-containing-cooling-fan/"
+      },
+      {
+        "name": "12V DC Cooling Fan 50x50x10mm (2″)",
+        "price": 95.53,
+        "link": "https://sharvielectronics.com/product/12v-dc-cooling-fan-50x50x10mm-2/"
+      }
+    ]
+  },
+  {
+    "part": "NPN Transistor (e.g., BC547 / 2N2222A)",
+    "quantity": 1,
+    "options": [
+      {
+        "name": "BC847 NPN Transistor",
+        "price": 2,
+        "link": "https://robu.in/product/bc847-npn-transistor-pack-of-15/"
+      },
+      {
+        "name": "BC547 NPN General Purpose Transistor TO-92 Package",
+        "price": 2.45,
+        "link": "https://sharvielectronics.com/product/bc547-npn-general-purpose-transistor-to-92-package/"
+      },
+      {
+        "name": "BC546 NPN General Purpose Transistor TO-92 Package",
+        "price": 2.85,
+        "link": "https://sharvielectronics.com/product/bc546-npn-general-purpose-transistor-to-92-package/"
+      }
+    ]
+  },
+  {
+    "part": "1k Ohm Resistor (1/4W)",
+    "quantity": 1,
+    "options": [
+      {
+        "name": "1k Ohm 1/4W 0603 Surface Mount Chip Resistor",
+        "price": 0.49,
+        "link": "https://robu.in/product/1k-ohm-1-4w-0603-surface-mount-chip-resistor-pack-of-100/"
+      },
+      {
+        "name": "1k Ohm 1/4W 1206 Surface Mount Chip Resistor",
+        "price": 0.65,
+        "link": "https://robu.in/product/1k-ohm-1-4w-1206-surface-mount-chip-resistor-pack-of-100/"
+      },
+      {
+        "name": "9.9 ohm – 1/4W – Resistor – 0603",
+        "price": 0.75,
+        "link": "https://sharvielectronics.com/product/9-9-ohm-1-4w-resistor-0603-pack-of-20/"
+      }
+    ]
+  },
+  {
+    "part": "Jumper Wires (Male-Male)",
+    "quantity": 1,
+    "options": [
+      {
+        "name": "Male to Male Jumper Wire Connector",
+        "price": 4.23,
+        "link": "https://sharvielectronics.com/product/male-to-male-jumper-wire-connector/"
+      },
+      {
+        "name": "Male to Female Jumper Wire Connector",
+        "price": 4.76,
+        "link": "https://sharvielectronics.com/product/male-to-female-jumper-wire-connector/"
+      },
+      {
+        "name": "Male To Male Jumper Wires 40 Pcs 10cm",
+        "price": 39,
+        "link": "https://robu.in/?post_type=product&p=44281"
+      }
+    ]
+  }
+]

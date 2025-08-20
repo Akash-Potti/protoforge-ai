@@ -1,5 +1,13 @@
 # .streamlit/config.toml
 
+[server]
+runOnSave = true  # Enable auto-rerun when files are saved
+maxUploadSize = 200  # In MB
+maxMessageSize = 200  # In MB
+
+[browser]
+gatherUsageStats = false  # Disable usage statistics gathering
+
 [theme]
 # A modern, vibrant color palette
 primaryColor="#00f9d3"
