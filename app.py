@@ -2,6 +2,7 @@
 
 import streamlit as st
 from main_agent import ProtoForgeAgent
+import json
 
 # --- Helper Functions (for better organization) ---
 
@@ -60,15 +61,68 @@ def trigger_agent_generation():
             f"Additional Info: {st.session_state.user_inputs.get('additional_info')}."
         )
         try:
-            planner = ProtoForgeAgent()
-            initial_plan = planner.generate_initial_plan(full_concept)
-            st.session_state.plan = initial_plan
+             planner = ProtoForgeAgent()
+             initial_plan = planner.generate_initial_plan(full_concept)
+             st.session_state.plan = initial_plan
         except Exception as e:
-            st.session_state.plan = f"### An Error Occurred\n**Please check your terminal for details.**\n*Common issues include missing API keys in the `.env` file.*\n\n**Error details:**\n```\n{e}\n```"
+             st.session_state.plan = f"### An Error Occurred\n**Please check your terminal for details.**\n*Common issues include missing API keys in the `.env` file.*\n\n**Error details:**\n```\n{e}\n```"
         
         st.session_state.generating = False
         st.session_state.step = 6
         st.rerun()
+
+def load_sourced_parts(json_path="sourced_parts.json"):
+    try:
+        with open(json_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception as e:
+        st.error(f"Error loading sourced parts: {e}")
+        return []
+
+def bom_selector():
+    st.subheader("🧾 Bill of Materials (BOM) Selector")
+    sourced_parts = load_sourced_parts()
+    if not sourced_parts:
+        st.warning("No sourced parts found. Please run the BOM sourcing agent first.")
+        return
+
+    selected_parts = []
+    for part in sourced_parts:
+        st.markdown(f"**{part['part']}** (Qty: {part['quantity']})")
+        options = part.get("options", [])
+        if options:
+            option_labels = [
+                f"{opt['name']} | ₹{opt['price']} | [Link]({opt['link']})" for opt in options
+            ]
+            selected = st.radio(
+                f"Select option for {part['part']}",
+                option_labels,
+                key=part['part']
+            )
+            selected_idx = option_labels.index(selected)
+            selected_parts.append({
+                "part": part["part"],
+                "quantity": part["quantity"],
+                "selected_option": options[selected_idx]
+            })
+        else:
+            st.info("No options available for this part.")
+
+    if st.button("Confirm Purchase Selection"):
+        st.success("You have selected the following parts to purchase:")
+        total_cost = 0
+        for item in selected_parts:
+            opt = item["selected_option"]
+            qty = int(item["quantity"])
+            price = float(opt["price"])
+            st.write(
+                f"{item['part']} (Qty: {qty}) - {opt['name']} | ₹{price} | [Link]({opt['link']})"
+            )
+            total_cost += price * qty
+        st.markdown(f"**Total Cost: ₹{total_cost:.2f}**")
+        with open("selected_parts.json", "w", encoding="utf-8") as f:
+            json.dump(selected_parts, f, indent=2, ensure_ascii=False)
+        st.info("Selection saved to selected_parts.json")
 
 # --- Main Application Logic ---
 
@@ -98,6 +152,17 @@ def main():
         st.success("The initial project brief is ready!")
         st.subheader("Generated Project Brief")
         st.markdown(st.session_state.plan, unsafe_allow_html=True)
+    
+    # BOM generation option
+        if "show_bom" not in st.session_state:
+            st.session_state.show_bom = False
+
+        if not st.session_state.show_bom:
+            if st.button("🧾 Generate Bill of Materials"):
+                st.session_state.show_bom = True
+                st.rerun()
+        else:
+            bom_selector()
 
 if __name__ == "__main__":
     main()
