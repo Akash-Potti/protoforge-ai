@@ -102,13 +102,27 @@ async def main():
 
                 # Fetch cheapest options for each part
                 print("\nSourcing parts from findpart.in ...\n")
+                sourced_parts = []
                 for item in bom:
                     part_name = item["part"]
                     options = await fetch_part_options(part_name, http_client)
                     print(f"{part_name} (qty {item['quantity']})")
+                    option_list = []
                     for idx, (name, price, link) in enumerate(options, start=1):
                         print(f"  {idx}. {name} — ₹{price}  →  {link}")
+                        option_list.append(
+                            {"name": name, "price": price, "link": link})
+                    sourced_parts.append({
+                        "part": part_name,
+                        "quantity": item["quantity"],
+                        "options": option_list
+                    })
                     print()
+                # Store sourced parts in JSON file
+                import json
+                with open("sourced_parts.json", "w", encoding="utf-8") as f:
+                    json.dump(sourced_parts, f, indent=2, ensure_ascii=False)
+                print("Sourced parts saved to sourced_parts.json\n")
                 break
 
             else:

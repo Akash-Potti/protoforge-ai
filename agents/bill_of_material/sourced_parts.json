@@ -1,0 +1,107 @@
+[
+  {
+    "part": "Arduino Uno R3 (or compatible)",
+    "quantity": 1,
+    "options": [
+      {
+        "name": "Transparent Acrylic Case For Compatible With Arduino UNO R3 Board",
+        "price": 29.87,
+        "link": "https://sharvielectronics.com/product/transparent-acrylic-case-for-compatible-with-arduino-uno-r3-board/"
+      },
+      {
+        "name": "Uno R3 CH340G ATmega328p Development Board Compatible with Arduino",
+        "price": 229,
+        "link": "https://robu.in/product/arduino-uno-r3-ch340g-atmega328p-devlopment-board/"
+      },
+      {
+        "name": "UNO R3 CH340G ATMega328P compatible with arduino + Cable",
+        "price": 246.05,
+        "link": "https://robu.in/?post_type=product&p=48065"
+      }
+    ]
+  },
+  {
+    "part": "5mm Red LED",
+    "quantity": 1,
+    "options": [
+      {
+        "name": "5mm Red LED – Diffused",
+        "price": 1.49,
+        "link": "https://sharvielectronics.com/product/5mm-red-led-diffused/"
+      },
+      {
+        "name": "3mm Red LED – Diffused",
+        "price": 1.8,
+        "link": "https://sharvielectronics.com/product/3mm-red-led-diffused/"
+      },
+      {
+        "name": "5mm Red LED – Clear",
+        "price": 1.86,
+        "link": "https://sharvielectronics.com/product/5mm-red-led-clear/"
+      }
+    ]
+  },
+  {
+    "part": "220 Ohm Resistor (1/4W)",
+    "quantity": 1,
+    "options": [
+      {
+        "name": "220 Ohm 1/4W 0603 Surface Mount Chip Resistor",
+        "price": 0.49,
+        "link": "https://robu.in/product/220-ohm-chip-resistor-1-4w-0603-surface-mount-pack-of-100/"
+      },
+      {
+        "name": "220 Ohm 1/4W 1206 Surface Mount Chip Resistor",
+        "price": 0.65,
+        "link": "https://robu.in/product/220-ohm-chip-resistor-1-4w-1206-surface-mount-pack-of-100/"
+      },
+      {
+        "name": "9.9 ohm – 1/4W – Resistor – 0603",
+        "price": 0.75,
+        "link": "https://sharvielectronics.com/product/9-9-ohm-1-4w-resistor-0603-pack-of-20/"
+      }
+    ]
+  },
+  {
+    "part": "Breadboard (half-size or mini)",
+    "quantity": 1,
+    "options": [
+      {
+        "name": "HC49/U 11.0592MHz Half-Size Crystal Oscillator",
+        "price": 6,
+        "link": "https://robu.in/product/hc49-u-11-0592mhz-crystal-oscillator-pack-of-5-2/"
+      },
+      {
+        "name": "HC49/U 12MHz Half-Size Crystal Oscillator",
+        "price": 6,
+        "link": "https://robu.in/product/hc49-u-12mhz-half-size-crystal-oscillator-pack-of-5/"
+      },
+      {
+        "name": "HC49/U 4MHz Half-Size Crystal Oscillator",
+        "price": 6,
+        "link": "https://robu.in/product/hc49-u-4mhz-crystal-oscillator-pack-of-5/"
+      }
+    ]
+  },
+  {
+    "part": "Jumper Wires (Male-Male)",
+    "quantity": 5,
+    "options": [
+      {
+        "name": "Male to Male Jumper Wire Connector",
+        "price": 4.23,
+        "link": "https://sharvielectronics.com/product/male-to-male-jumper-wire-connector/"
+      },
+      {
+        "name": "Male to Female Jumper Wire Connector",
+        "price": 4.76,
+        "link": "https://sharvielectronics.com/product/male-to-female-jumper-wire-connector/"
+      },
+      {
+        "name": "Male To Male Jumper Wires 40 Pcs 10cm",
+        "price": 39,
+        "link": "https://robu.in/?post_type=product&p=44281"
+      }
+    ]
+  }
+]
