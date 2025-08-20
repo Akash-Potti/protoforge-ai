@@ -1,0 +1,9 @@
+# .streamlit/config.toml
+
+[theme]
+# A modern, vibrant color palette
+primaryColor="#00f9d3"
+backgroundColor="#0a0f18"
+secondaryBackgroundColor="#1c222e"
+textColor="#ffffff"
+font="sans serif"
