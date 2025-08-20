@@ -5,7 +5,7 @@ import httpx
 from bs4 import BeautifulSoup
 
 # Initialize Gemini client (Google AI Studio key)
-client = genai.Client(api_key="AIzaSyCC5HFBbTP6Qh6ubnNyOJwB8lJc24s0s-4")
+client = genai.Client(api_key="")
 
 # --- Gemini helper ---------------------------------------------------------- #
 
