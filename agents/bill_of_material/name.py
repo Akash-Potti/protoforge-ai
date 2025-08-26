@@ -4,7 +4,7 @@ from composio_gemini import GeminiProvider
 from google import genai
 from google.genai import types
 composio = Composio(
-    api_key="ak_8Bnuwvbwdalz3Owl8NEk",
+    api_key="",
 )
 
 client = genai.Client(api_key="")
